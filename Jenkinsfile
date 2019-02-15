@@ -20,12 +20,12 @@ node {
         checkout scm
     }
 
-    //stage('NPM Install') {
-    //    sh 'npm install'
-    //}
+    stage('NPM Install') {
+        sh 'npm install'
+    }
    
-    stage('NPM Install Karma') {
-        sh 'npm install -g karma-cli'
+    stage('NPM Install plugin') {
+        sh 'npm install karma-jasmine karma-chrome-launcher jasmine-core --save-dev'
     }
   
     stage ('Test'){
