@@ -20,18 +20,18 @@ node {
         checkout scm
     }
 
-    stage('NPM Install') {
-        sh 'npm install'
-    }
+    //stage('NPM Install') {
+    //    sh 'npm install'
+    //}
 
-    stage('Build') {
-        milestone()
-        sh 'ng build'
-    }
+    //stage('Build') {
+    //    milestone()
+    //    sh 'ng build'
+    //}
     
     stage('Archive') { 
-    sh 'tar -cvzf dist.tar.gz --strip-components=1 dist' 
-    archive 'dist.tar.gz' 
+    sh 'tar -cvzf dist.tar.gz' 
+    //archive 'dist.tar.gz' 
   } 
  
   stage('Deploy') { 
