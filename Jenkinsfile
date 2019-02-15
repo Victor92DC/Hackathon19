@@ -23,6 +23,10 @@ node {
     stage('NPM Install') {
         sh 'npm install'
     }
+    
+    stage ('install Karma){
+        sh 'npm install karma'
+    }
 
     stage('Build') {
         milestone()
