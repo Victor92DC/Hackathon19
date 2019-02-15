@@ -20,12 +20,8 @@ node {
         checkout scm
     }
 
-    //stage('NPM Install') {
-    //    sh 'npm install'
-    //}
-    
-    stage ('install Karma){
-        sh 'npm install karma'
+    stage('NPM Install') {
+        sh 'npm install'
     }
 
     stage('Build') {
@@ -35,9 +31,9 @@ node {
     
     stage('Archive') { 
       echo "Archive"
-  } 
+   } 
  
-  stage('Deploy') { 
+   stage('Deploy') { 
     milestone() 
     echo "Deploying..." 
   } 
