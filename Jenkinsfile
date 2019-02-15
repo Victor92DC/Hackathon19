@@ -20,9 +20,9 @@ node {
         checkout scm
     }
 
-    stage('NPM Install') {
-        sh 'npm install'
-    }
+    //stage('NPM Install') {
+    //    sh 'npm install'
+    //}
     
     stage ('install Karma){
         sh 'npm install karma'
