@@ -21,12 +21,13 @@ node {
     }
 
     stage('NPM Install') {
+        milestone()
         sh 'npm install'
     }
    
-    stage('NPM Install plugin') {
-        sh 'npm install karma-jasmine karma-chrome-launcher jasmine-core --save-dev'
-    }
+    //stage('NPM Install plugin') {
+    //    sh 'npm install karma-jasmine karma-chrome-launcher jasmine-core --save-dev'
+    //}
   
     stage ('Test'){
       milestone()
