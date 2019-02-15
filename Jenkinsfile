@@ -28,4 +28,14 @@ node {
         milestone()
         sh 'ng build'
     }
+    
+    stage('Archive') { 
+    sh 'tar -cvzf dist.tar.gz --strip-components=1 dist' 
+    archive 'dist.tar.gz' 
+  } 
+ 
+  stage('Deploy') { 
+    milestone() 
+    echo "Deploying..." 
+  } 
 }
