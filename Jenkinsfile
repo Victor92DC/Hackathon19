@@ -30,8 +30,24 @@ node {
     //}
     
     stage('Archive') { 
-    sh 'tar -cvzf dist.tar.gz' 
-    //archive 'dist.tar.gz' 
+    sh 
+      '''
+      
+      cd C:/jadd/jenkins-2.60.3/jobs/Hackaton/workspace/
+      #Introducimos los nombres del directorio en Array
+      for i in $(/bin/ls -ad *); 
+      do
+        #Cogemos el nombre de la carpeta
+        echo $(basename $i)
+        #Comprimimos 
+        echo "\n Comprimiento $(basename $i)"
+        /bin/tar -cvf $(basename $i).tar.gz $(basename $i)
+        #Borramos las carpetas
+        rm -r $(basename $i)
+        rm -r $(basename $i).tar.gz
+      done
+      
+      '''
   } 
  
   stage('Deploy') { 
