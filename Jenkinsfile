@@ -32,7 +32,13 @@ node {
     stage ('Test'){
       milestone()
       sh 'ng test'
-    } 
+      //sh 'ng test --single-run' 
+    }
+  
+    stage ('Code Quality'){
+      milestone()
+      sh 'ng lint'
+    }
 
     stage('Build') {
         milestone()
@@ -40,7 +46,10 @@ node {
     }
     
     stage('Archive') { 
-      echo "Archive"
+      echo "Archive..."
+      //sh 'tar -cvzf dist.tar.gz --strip-components=1 dist' 
+      //archive 'dist.tar.gz' 
+
    } 
  
    stage('Deploy') { 
