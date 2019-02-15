@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiServiceService } from 'src/app/api-service.service';
 
 @Component({
   selector: 'app-main',
@@ -8,13 +9,17 @@ import { Router } from '@angular/router';
 })
 export class MainComponent implements OnInit {
 
-  constructor(private route: Router) { }
+
+
+  constructor(private route: Router,
+              private api: ApiServiceService) { }
 
   ngOnInit() {
   }
 
   enter(){
     this.route.navigateByUrl("weather");
+    
   }
 
 }
