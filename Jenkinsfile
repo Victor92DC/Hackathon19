@@ -23,6 +23,15 @@ node {
     stage('NPM Install') {
         sh 'npm install'
     }
+   
+    stage('NPM Install Karma') {
+        sh 'npm install -g karma-cli'
+    }
+  
+    stage ('Test'){
+      milestone()
+      sh 'ng test'
+    } 
 
     stage('Build') {
         milestone()
