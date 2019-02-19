@@ -31,7 +31,7 @@ node {
   
     stage ('Test'){
       milestone()
-      sh 'ng test'
+      sh 'timeout 10 ng test'
       //sh 'ng test --single-run' 
     }
   
