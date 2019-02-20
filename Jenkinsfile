@@ -33,7 +33,7 @@ node {
   
     stage ('Code Quality'){
       milestone()
-      //sh 'ng lint'
+      sh 'ng lint --force=true'
     }
 
     stage('Build') {
