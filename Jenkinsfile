@@ -24,10 +24,6 @@ node {
         milestone()
         sh 'npm install'
     }
-   
-    //stage('NPM Install plugin') {
-    //    sh 'npm install karma-jasmine karma-chrome-launcher jasmine-core --save-dev'
-    //}
   
     stage ('Test'){
       milestone()
@@ -37,7 +33,7 @@ node {
   
     stage ('Code Quality'){
       milestone()
-      sh 'ng lint'
+      //sh 'ng lint'
     }
 
     stage('Build') {
@@ -47,8 +43,8 @@ node {
     
     stage('Archive') { 
       echo "Archive..."
-      //sh 'tar -cvzf dist.tar.gz --strip-components=1 dist' 
-      //archive 'dist.tar.gz' 
+      sh 'tar -cvzf dist.tar.gz --strip-components=1 dist' 
+      archive 'dist.tar.gz' 
 
    } 
  
