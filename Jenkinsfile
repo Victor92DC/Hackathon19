@@ -27,8 +27,10 @@ node {
   
     stage ('Test'){
       milestone()
+      echo "Test..."
+      //sh "ng test"
+      //sh 'ng test --single-run'
       //sh 'ng test & sleep 10; kill $!'
-      //sh 'ng test --single-run' 
     }
   
     stage ('Code Quality'){
