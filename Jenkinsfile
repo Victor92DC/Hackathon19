@@ -31,7 +31,7 @@ node {
   
     stage ('Test'){
       milestone()
-      sh 'ng test & sleep 10; kill $!'
+      //sh 'ng test & sleep 10; kill $!'
       //sh 'ng test --single-run' 
     }
   
