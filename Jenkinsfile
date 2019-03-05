@@ -28,6 +28,7 @@ node {
     stage ('Test'){
       milestone()
       echo "Test..."
+      sh "ng test --code-coverage --watch=false"
       //sh "ng test"
       //sh 'ng test --single-run'
       //sh 'ng test & sleep 10; kill $!'
